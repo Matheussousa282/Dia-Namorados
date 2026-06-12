@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Angélica ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:linear-gradient(135deg,#ff4d6d,#ff758f);color:#fff;overflow-x:hidden}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px;text-align:center}
+h1{font-size:4rem} h2{font-size:2.3rem;margin-bottom:20px}
+p{max-width:900px;line-height:1.8}
+.card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:25px;border-radius:20px;max-width:900px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;width:100%;max-width:1200px}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:15px}
+.counter{font-size:2rem;font-weight:bold;margin-top:20px}
+button{padding:15px 30px;border:none;border-radius:30px;font-size:18px;cursor:pointer}
+.heart{position:fixed;top:-20px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh)}}
+iframe{max-width:1000px;width:100%;height:500px;border-radius:20px}
+#final{display:none;font-size:2rem;margin-top:30px}
+
+.counter{
+    font-size:2rem;
+    font-weight:bold;
+    text-align:center;
+    line-height:1.8;
+}
+
+.tempo-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.tempo-item{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:20px;
+    border-radius:20px;
+    min-width:120px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.tempo-item span{
+    display:block;
+    font-size:2rem;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<section>
+<h1>❤️ Angélica ❤️</h1>
+<p>Uma pequena homenagem criada com todo amor por Matheus.</p>
+</section>
+
+<section>
+<h2>💌 Minha Carta Para Você</h2>
+<div class="card">
+<p>
+Angélica, desde 23/04/2016 minha vida ganhou um significado diferente.
+Você se tornou meu sorriso nos dias felizes, minha força nos dias difíceis
+e a pessoa que faz meu coração acreditar que o amor verdadeiro existe.
+
+Ao seu lado aprendi que felicidade não está nos lugares que visitamos,
+mas na companhia que escolhemos para caminhar pela vida.
+
+Você é meu porto seguro, minha melhor amiga, meu grande amor e a mulher
+com quem desejo continuar escrevendo os capítulos mais bonitos da minha história.
+
+Se eu pudesse resumir tudo o que sinto em uma única frase, seria:
+
+"Em todas as vidas, em todos os tempos e em todos os caminhos,
+eu escolheria você novamente."
+
+Eu te amo infinitamente.
+
+❤️ Matheus
+</p>
+</div>
+</section>
+
+<section>
+<h2>📸 Nossas Memórias</h2>
+<div class="gallery">
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+<img src="foto4.jpeg">
+<img src="foto5.jpeg">
+</div>
+<p style="margin-top:20px">Substitua as imagens pelos seus arquivos.</p>
+</section>
+
+<section>
+<h2>⏳ Nosso Tempo Juntos</h2>
+<div id="contador" class="counter"></div>
+</section>
+
+<section>
+<h2>🎵 Nossa Música</h2>
+<iframe src="https://www.youtube.com/embed/fQv-5OuLODE" allowfullscreen></iframe>
+</section>
+
+<section>
+<h2>🌹 Feliz Dia dos Namorados 🌹</h2>
+<button onclick="mostrar()">Clique Aqui Meu Amor ❤️</button>
+<div id="final">
+<br>
+Você é a melhor parte da minha vida.<br>
+Obrigado por cada sorriso, abraço e momento ao seu lado.<br><br>
+❤️ Eu Te Amo, Angélica ❤️
+</div>
+</section>
+
+<script>
+const inicio = new Date("2018-04-23T00:00:00");
+
+function atualizarContador() {
+
+    const inicio = new Date("2018-04-23T00:00:00");
+    const agora = new Date();
+
+    let anos = agora.getFullYear() - inicio.getFullYear();
+    let meses = agora.getMonth() - inicio.getMonth();
+    let dias = agora.getDate() - inicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+
+        const ultimoMes = new Date(
+            agora.getFullYear(),
+            agora.getMonth(),
+            0
+        );
+
+        dias += ultimoMes.getDate();
+    }
+
+    if (meses < 0) {
+        anos--;
+        meses += 12;
+    }
+
+    const diferenca = agora - inicio;
+
+    const totalSegundos = Math.floor(diferenca / 1000);
+
+    const segundos = totalSegundos % 60;
+    const minutos = Math.floor(totalSegundos / 60) % 60;
+    const horas = Math.floor(totalSegundos / 3600) % 24;
+
+    document.getElementById("contador").innerHTML = `
+        <div class="tempo-box">
+
+            <div class="tempo-item">
+                <span>${anos}</span>
+                Anos
+            </div>
+
+            <div class="tempo-item">
+                <span>${meses}</span>
+                Meses
+            </div>
+
+            <div class="tempo-item">
+                <span>${dias}</span>
+                Dias
+            </div>
+
+            <div class="tempo-item">
+                <span>${horas}</span>
+                Horas
+            </div>
+
+            <div class="tempo-item">
+                <span>${minutos}</span>
+                Minutos
+            </div>
+
+            <div class="tempo-item">
+                <span>${segundos}</span>
+                Segundos
+            </div>
+
+        </div>
+
+        <br>
+
+        ❤️ Desde 23 de Abril de 2018 ❤️
+    `;
+}
+
+setInterval(atualizarContador, 1000);
+atualizarContador();
+
+function mostrar(){
+ document.getElementById("final").style.display="block";
+}
+
+function coracao(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(15+Math.random()*25)+"px";
+ h.style.animationDuration=(4+Math.random()*4)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+}
+setInterval(coracao,300);
+</script>
+
+</body>
+</html>
